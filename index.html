@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather-Animation</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="snow_fall" class="sonw hide"></div>
+    <div class="flex-box">
+      <section id="rainCheck" class="rain off">
+        <img class="img" id="background" alt="background" src="" />
+      </section>
+      <section class="fog">
+        <div class="absolute-bg"></div>
+        <div class="fog-container">
+          <div class="fog-img fog-img-first hidden"></div>
+          <div class="fog-img fog-img-second hidden"></div>
+          <div id="cloudImg" class="moving"></div>
+          <div id="sun" class="sun">
+            <div class="ray_box">
+              <div class="ray ray1"></div>
+              <div class="ray ray2"></div>
+              <div class="ray ray3"></div>
+              <div class="ray ray4"></div>
+              <div class="ray ray5"></div>
+              <div class="ray ray6"></div>
+              <div class="ray ray7"></div>
+              <div class="ray ray8"></div>
+              <div class="ray ray9"></div>
+              <div class="ray ray10"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div id="icon-box" class="icon-box">
+        <ul>
+          <li>
+            <label for="cloudSunIcon">
+              <input
+                id="cloudSunIcon"
+                type="radio"
+                class="radio"
+                name="weatherIcon"
+              />
+              <div class="icon"><i class="fas fa-cloud-sun"></i></div>
+            </label>
+          </li>
+          <li>
+            <label for="cloudIcon">
+              <input
+                id="cloudIcon"
+                type="radio"
+                class="radio"
+                name="weatherIcon"
+              />
+              <div class="icon"><i class="fas fa-cloud"></i></div>
+            </label>
+          </li>
+          <li>
+            <label for="cloudRainIcon">
+              <input
+                id="cloudRainIcon"
+                type="radio"
+                class="radio"
+                name="weatherIcon"
+              />
+              <div class="icon"><i class="fas fa-cloud-rain"></i></div>
+            </label>
+          </li>
+          <li>
+            <label for="smogIcon">
+              <input
+                id="smogIcon"
+                type="radio"
+                class="radio"
+                name="weatherIcon"
+              />
+              <div class="icon"><i class="fas fa-smog"></i></div>
+            </label>
+          </li>
+          <li>
+            <label for="snowflakeIcon">
+              <input
+                id="snowflakeIcon"
+                type="radio"
+                class="radio"
+                name="weatherIcon"
+              />
+              <div class="icon"><i class="far fa-snowflake"></i></div>
+            </label>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="particles.js"></script>
+    <script src="app.js"></script>
+    <script src="rainyday.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,415 @@
+body,
+ul,
+li,
+h1 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  overflow: hidden;
+  display: flex;
+}
+
+/* lib */
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+/* 눈 */
+
+#snow_fall {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.flex-box {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* 구름 */
+
+.moving {
+  width: 100%;
+  height: 500px;
+  background: url("./img/cloud.png") 0 top / 120% repeat-x;
+  animation: movebg 100s linear infinite;
+}
+
+.dark {
+  background: url("./img/cloud3.png") 0 top / 120% repeat-x;
+}
+
+@keyframes movebg {
+  0% {
+    background-position: 0 top;
+  }
+  100% {
+    background-position: -600% top;
+  }
+}
+
+/* 햇빛 */
+
+.sun {
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  margin: auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.9;
+  box-shadow: 0px 0px 40px 15px white;
+}
+
+.ray_box {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 70px;
+  animation: ray_anim 120s linear infinite;
+  animation: ray_anim 120s linear infinite;
+}
+.ray {
+  background: linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background: linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  margin-left: 10px;
+  border-radius: 80% 80% 0 0;
+  position: absolute;
+  opacity: 0.2;
+}
+
+.ray1 {
+  height: 170px;
+  width: 30px;
+  transform: rotate(180deg);
+  top: -175px;
+  left: 15px;
+}
+.ray2 {
+  height: 100px;
+  width: 8px;
+  transform: rotate(220deg);
+  top: -90px;
+  left: 75px;
+}
+.ray3 {
+  height: 170px;
+  width: 50px;
+  transform: rotate(250deg);
+  top: -80px;
+  left: 100px;
+}
+.ray4 {
+  height: 120px;
+  width: 14px;
+  transform: rotate(305deg);
+  top: 30px;
+  left: 100px;
+}
+.ray5 {
+  height: 140px;
+  width: 30px;
+  transform: rotate(-15deg);
+  top: 60px;
+  left: 40px;
+}
+.ray6 {
+  height: 90px;
+  width: 50px;
+  transform: rotate(30deg);
+  top: 60px;
+  left: -40px;
+}
+.ray7 {
+  height: 180px;
+  width: 10px;
+  transform: rotate(70deg);
+  top: -35px;
+  left: -40px;
+}
+.ray8 {
+  height: 120px;
+  width: 30px;
+  transform: rotate(100deg);
+  top: -45px;
+  left: -90px;
+}
+.ray9 {
+  height: 80px;
+  width: 10px;
+  transform: rotate(120deg);
+  top: -65px;
+  left: -60px;
+}
+.ray10 {
+  height: 190px;
+  width: 23px;
+  transform: rotate(150deg);
+  top: -185px;
+  left: -60px;
+}
+
+@keyframes ray_anim {
+  0% {
+    transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* 안개 효과 */
+
+.absolute-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: url("../img/BG_photo.png");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.fog {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  z-index: -1;
+}
+
+.fog-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fog-img {
+  position: absolute;
+  height: 100vh;
+  width: 300vw;
+}
+
+.fog-img {
+  position: absolute;
+  height: 100vh;
+  width: 300vw;
+}
+
+.fog-img-first {
+  background: url("../img/fog-1.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 60s linear infinite;
+}
+
+.fog-img-second {
+  background: url("../img/fog-2.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: center;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-200vw, 0, 0);
+  }
+}
+
+/* 비 */
+
+.rain {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.rain > img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 버튼 */
+
+.icon-box {
+  position: absolute;
+  z-index: 100;
+}
+
+.icon-box ul {
+  justify-content: center;
+}
+.icon-box ul li {
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.icon-box ul li label {
+  position: relative;
+}
+
+.icon-box ul li label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon-box ul li input[type="checked"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon-box ul li label .icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: #18191f;
+  color: #555;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: -1px -1px 4px rgba(255, 255, 255, 0.05),
+    4px 4px 6px rgba(0, 0, 0, 0.2),
+    inset -1px -1px 4px rgba(255, 255, 255, 0.05),
+    inset 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.icon-box ul li label .icon:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 5px);
+  height: calc(50% - 5px);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.icon-box ul li label input[type="radio"]:checked ~ .icon {
+  box-shadow: inset 0px 0px 2px rgba(255, 255, 255, 0.05),
+    inset 4px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box ul li label input[type="radio"]:checked ~ .icon {
+  color: #00f3ff;
+  text-shadow: 0 0 15px #00f3ff, 0 0 15px #00f3ff;
+  animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  0% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* 반응형 */
+
+@media (max-width: 800px) {
+  .moving {
+    width: 110%;
+  }
+}
+
+@media (max-width: 700px) {
+  .moving {
+    width: 130%;
+  }
+  .sun {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .moving {
+    width: 140%;
+  }
+  .sun {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 500px) {
+  .moving {
+    width: 160%;
+  }
+  .sun {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-box ul li label .icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 400px) {
+  .moving {
+    width: 180%;
+  }
+  .sun {
+    width: 50px;
+    height: 50px;
+  }
+  .icon-box ul li label .icon {
+    width: 35px;
+    height: 35px;
+  }
+  .icon-box {
+    margin-bottom: 10px;
+  }
+}
