@@ -7,13 +7,13 @@ function getWeatherData(){
         dataType: 'json',
         success: function (json) {
             const wIcon = json.weather[0].icon.substring(0, 2);
-            button(wIcon);
-            viewWeather();
+            buttonOnOff(wIcon);
+            weatherAnimation();
         }
     });
 }
 
-function button(icon){
+function buttonOnOff(icon){
     const cloudSunIcon = $('#cloudSunIcon')[0];
     const cloudIcon = $('#cloudIcon')[0];
     const cloudRainIcon = $('#cloudRainIcon')[0];
@@ -36,7 +36,7 @@ function button(icon){
     }
 }
 
-function viewWeather(){
+function weatherAnimation(){
     const cloudSunIcon = $('#cloudSunIcon')[0];
     const cloudIcon = $('#cloudIcon')[0];
     const cloudRainIcon = $('#cloudRainIcon')[0];
@@ -112,11 +112,11 @@ function rain(){
     image.src = 'img/BG_photo.png';
 }
 
-function init(){
+function buttonChangeEvent(){
     getWeatherData();
     $('.radio').change(function(){
-        viewWeather();
+        weatherAnimation();
     });
 }
 
-init();
+buttonChangeEvent();
