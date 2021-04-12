@@ -1,15 +1,17 @@
 let rainyDay = {};
 
-$.ajax({
-    url: 'https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=02c9e65f81988386ebf7ebf7b5557d2c&units=metric&lang=kr',
-    async: false,
-    dataType: 'json',
-    success: function (json) {
-        const wIcon = json.weather[0].icon.substring(0, 2);
-        button(wIcon);
-        viewWeather();
-    }
-});
+function getWeatherData(){
+    $.ajax({
+        url: 'https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=02c9e65f81988386ebf7ebf7b5557d2c&units=metric&lang=kr',
+        async: false,
+        dataType: 'json',
+        success: function (json) {
+            const wIcon = json.weather[0].icon.substring(0, 2);
+            button(wIcon);
+            viewWeather();
+        }
+    });
+}
 
 function button(icon){
     const cloudSunIcon = $('#cloudSunIcon')[0];
@@ -32,18 +34,6 @@ function button(icon){
     else if (icon === "50") {
         smogIcon.checked  = true;
     }
-}
-
-function rain(){
-    const image = document.getElementById('background');
-    image.onload = function(){
-        rainyDay = new RainyDay({
-            image: this,
-            fps: 30,
-            blur: 10
-        })
-    }
-    image.src = 'img/BG_photo.png';
 }
 
 function viewWeather(){
@@ -110,6 +100,23 @@ function viewWeather(){
     }
 }
 
-$('.radio').change(function(){
-    viewWeather();
-});
+function rain(){
+    const image = document.getElementById('background');
+    image.onload = function(){
+        rainyDay = new RainyDay({
+            image: this,
+            fps: 30,
+            blur: 10
+        })
+    }
+    image.src = 'img/BG_photo.png';
+}
+
+function init(){
+    getWeatherData();
+    $('.radio').change(function(){
+        viewWeather();
+    });
+}
+
+init();
